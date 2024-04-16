@@ -3,7 +3,7 @@ package com.example.shellStudents.event;
 import com.example.shellStudents.model.Event;
 import com.example.shellStudents.model.EventType;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ public class StudentsEventListener {
 
     private final EventQueue queue;
 
-    @EventListener(ApplicationReadyEvent.class)
+    @EventListener(ApplicationStartedEvent.class)
     public void startListener(){
         Thread listenerThread = new Thread(() -> {
             while (true){
