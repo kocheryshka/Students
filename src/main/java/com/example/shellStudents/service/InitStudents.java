@@ -3,7 +3,7 @@ package com.example.shellStudents.service;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 @Component
 @RequiredArgsConstructor
-@Profile("init")
+@ConditionalOnProperty(name = "app.init-students", havingValue = "true")
 public class InitStudents {
 
     private final Students students;
@@ -39,7 +39,7 @@ public class InitStudents {
                 students.add(parts[0], parts[1], Integer.parseInt(parts[2]));
             }
         } catch (IOException e){
-            System.out.println("Касяк");
+            e.printStackTrace();
         }
 
     }

@@ -1,4 +1,4 @@
-package com.example.shellStudents.model;
+package com.example.shellStudents.event;
 
 public enum EventType {
     INSERT, DELETE

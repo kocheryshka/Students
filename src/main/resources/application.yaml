@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Students
+app:
+  file-path: students.csv
+  init-students: ${INIT_STUDENTS:true}

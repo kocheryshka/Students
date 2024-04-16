@@ -10,7 +10,6 @@ tmp/nanoc/
 crash.log
 
 *.log
-.idea/
-.mvn/
-.gitattributes
+.*
+.*/
 mvnw*
